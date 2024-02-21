@@ -1,0 +1,20 @@
+source /etc/network/interfaces.d/*
+
+# The loopback network interface, in1 interface and in2 interface
+auto lo eth2 eth0 eth1               
+iface lo inet loopback
+
+# in1 interface
+iface eth0 inet static         
+        address 192.168.1.195
+        netmask 255.255.255.0
+        gateway 192.168.1.155
+
+# in2 interface
+iface eth1 inet static          
+        address 192.168.2.35
+        netmask 255.255.255.0
+        gateway 192.168.2.7
+
+# NAT interface
+iface eth2 inet dhcp
